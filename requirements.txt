@@ -1,0 +1,13 @@
+# Conda dependencies for Python 3.8
+python=3.8
+pytorch=1.7.1
+torchvision
+cudatoolkit=11.0
+
+# Pip dependencies
+ftfy
+regex
+tqdm
+matplotlib
+pandas
+git+https://github.com/openai/CLIP.git
