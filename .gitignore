@@ -169,3 +169,10 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+
+# Folders
+/data/
+
+# Files
+CSC_53449_EP 2025 Projects.pdf
