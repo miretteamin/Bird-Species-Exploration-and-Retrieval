@@ -35,7 +35,7 @@ This project explores the use of **Foundation Models** for **bird species recogn
 ---
 
 ## 📂 Dataset
-- **CUB-200-2011** ([Perona Lab - CUB-200-2011](http://www.vision.caltech.edu/visipedia/CUB-200-2011.html))
+- **CUB-200-2011** ([Perona Lab - CUB-200-2011](https://www.vision.caltech.edu/datasets/cub_200_2011/))
 - Contains **200 bird species** with **11,788 images**.
 - Includes **detailed annotations** for each bird (species, attributes, bounding boxes, etc.).
 

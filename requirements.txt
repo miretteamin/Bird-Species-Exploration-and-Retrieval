@@ -1,13 +1,38 @@
-# Conda dependencies for Python 3.8
-python=3.8
-pytorch=1.7.1
-torchvision
-cudatoolkit=11.0
+# Requirements for Python 3.9 with CUDA support
 
-# Pip dependencies
+# Install PyTorch with CUDA support using Conda (Recommended)
+# If using Conda, run this command first:
+# conda install --yes -c pytorch pytorch=1.12.1 torchvision torchaudio cudatoolkit=11.3
+
+# Core dependencies
+torch
+torchvision
+torchaudio
+
+# Utility and performance libraries
 ftfy
 regex
 tqdm
+numpy==1.24.4
 matplotlib
 pandas
+accelerate
+sentencepiece
+safetensors
+salesforce-lavis
+
+## VScode
+ipykernel
+
+# Hugging Face Transformers and Tokenizers
+transformers>=4.25.0,<4.27
+tokenizers==0.13.3
+
+# Install CLIP (OpenAI)
 git+https://github.com/openai/CLIP.git
+
+# # Install BLIP-2 (Salesforce LAVIS)
+# git+https://github.com/salesforce/LAVIS.git
+
+# Install LLaVA (Latest stable version)
+git+https://github.com/haotian-liu/LLaVA.git
