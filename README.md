@@ -1,7 +1,5 @@
 # 🦜 Bird Species Exploration and Retrieval
 
-**Difficulty: 4/5**
-
 This project explores the use of **Foundation Models** for **bird species recognition, textual description generation, and image retrieval**. It employs **CLIP, BLIP-2, and Llava** to classify bird species, generate detailed descriptions, and retrieve relevant images from textual inputs. The **CUB-200-2011 dataset** is used as the primary dataset for training and evaluation.
 
 ![alt text](image.png)
