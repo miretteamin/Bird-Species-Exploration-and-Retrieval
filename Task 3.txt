@@ -1,0 +1,9 @@
+Approach 1:
+
+- Use LLava to caption the image
+- Use the generated text to find the most similar image in the dataset using CLIP
+
+Approach 2:
+
+- Use LLava to caption the image
+- Use both the image and the generated text to find the most similar image in the dataset using CLIP
