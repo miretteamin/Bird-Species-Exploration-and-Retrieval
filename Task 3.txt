@@ -7,3 +7,17 @@ Approach 2:
 
 - Use LLava to caption the image
 - Use both the image and the generated text to find the most similar image in the dataset using CLIP
+
+
+- CLIP takes attributes as input
+- CLIP takes LLava Output as input
+
+- Look for something other than CLIP
+
+- Sliding window over CLIP text input
+
+
+- Dataset:
+ - Part labels -> use in LLava
+ - MTurk pixels -> not enough coverage to be useful
+ - Attributes -> use as CLIP input
