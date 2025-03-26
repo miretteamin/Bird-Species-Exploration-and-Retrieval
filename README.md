@@ -2,7 +2,7 @@
 
 This project explores the use of **Foundation Models** for **bird species recognition, textual description generation, and image retrieval**. It employs **CLIP, BLIP-2, and Llava** to classify bird species, generate detailed descriptions, and retrieve relevant images from textual inputs. The **CUB-200-2011 dataset** is used as the primary dataset for training and evaluation.
 
-![alt text](image.png)
+![alt text](pics/image.png)
 ---
 
 ## 🚀 Project Tasks
@@ -36,6 +36,7 @@ This project explores the use of **Foundation Models** for **bird species recogn
 - **CUB-200-2011** ([Perona Lab - CUB-200-2011](https://www.vision.caltech.edu/datasets/cub_200_2011/))
 - Contains **200 bird species** with **11,788 images**.
 - Includes **detailed annotations** for each bird (species, attributes, bounding boxes, etc.).
+- We added a json file called "llava_captions.json" that includes the path of images, class_label, visible parts and the extracted llava_caption based on the image and the visible parts (image description).
 
 ---
 
@@ -67,13 +68,13 @@ This project explores the use of **Foundation Models** for **bird species recogn
 - **Hugging Face Transformers & Diffusers** (for model implementation)
 
 ---
-
+<!-- 
 ## 📚 Tutorials & Resources
 
 🔹 Running **BLIP-2** on Colab → [Chat with BLIP-2](https://huggingface.co/spaces/Salesforce/BLIP-2)
 🔹 Running **Llava** on Colab → [LLaVa](https://github.com/haotian-liu/LLaVA)
 🔹 Tutorial on Image Retrieval → [Image Similarity with Hugging Face](https://huggingface.co/blog/image-similarity)
-🔹 Research Paper: **Zero-Shot Composed Image Retrieval with Textual Inversion** ([2303.15247](https://arxiv.org/abs/2303.15247))
+🔹 Research Paper: **Zero-Shot Composed Image Retrieval with Textual Inversion** ([2303.15247](https://arxiv.org/abs/2303.15247)) -->
 
 ---
 

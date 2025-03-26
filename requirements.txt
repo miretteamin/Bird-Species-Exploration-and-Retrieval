@@ -20,6 +20,10 @@ accelerate
 sentencepiece
 safetensors
 salesforce-lavis
+bitsandbytes
+wandb
+peft
+nltk
 
 ## VScode
 ipykernel
@@ -36,3 +40,6 @@ git+https://github.com/openai/CLIP.git
 
 # Install LLaVA (Latest stable version)
 git+https://github.com/haotian-liu/LLaVA.git
+
+# Install LoRA
+git+https://github.com/jaisidhsingh/LoRA-CLIP.git

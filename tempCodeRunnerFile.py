@@ -1,1 +1,0 @@
-os.path.join(data_dir, 'images')
