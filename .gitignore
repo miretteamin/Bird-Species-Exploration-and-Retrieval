@@ -172,7 +172,8 @@ cython_debug/
 
 
 # Folders
-/data/
+/data/CUB_200_2011
+/data/Processed Batches
 
 # Files
 CSC_53449_EP 2025 Projects.pdf
