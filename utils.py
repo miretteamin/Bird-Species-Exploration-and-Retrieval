@@ -46,6 +46,7 @@ def get_clip_image_features(model, preprocess, image_path, device):
         features = model.encode_image(image).cpu().numpy()
     return features
 
+
 def get_clip_text_features(model, text, device):
     text_inputs = clip.tokenize([text]).to(device)
     with torch.no_grad():
@@ -79,9 +80,9 @@ def get_cosine_similarity(img_features: torch.Tensor, txt_features: torch.Tensor
     norm_img = torch.norm(img_features, p=2)
     norm_txt = torch.norm(txt_features, p=2)
     
-    # Avoid division by zero
+    # avoid division by zero
     if norm_img == 0 or norm_txt == 0:
-        return torch.tensor(0.0)  # Handle zero-vector cases
+        return torch.tensor(0.0) 
     
     similarity = dot_product / (norm_img * norm_txt)
     
@@ -94,6 +95,7 @@ def get_clip_llava_caption_features(text):
         text_features += get_clip_text_features(sentence)
     text_features /= len(sentences)
     return text_features
+
 
 def generate_clip_embeddings_imgs(data_dir, transform, images):
     img_dir = os.path.join(data_dir, 'images')    
