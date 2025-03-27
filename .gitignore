@@ -172,7 +172,7 @@ cython_debug/
 
 
 # Folders
-/data/
+/data/CUB_200_2011/
 
 # Files
 CSC_53449_EP 2025 Projects.pdf
