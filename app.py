@@ -9,11 +9,12 @@ import clip
 import torch
 
 class App(tk.Tk):
-    def __init__(self, data_dir):
+    def __init__(self, data_dir, embeds_dir):
         super().__init__()
         self.title("Bird Species Exploration and Retrieval")
         # self.geometry("300x200")
         self.data_dir = data_dir
+        self.embeds_dir = embeds_dir
         self.img_dir = os.path.join(data_dir, 'images')
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
         print(f'Device: {self.device}')
@@ -44,12 +45,12 @@ class App(tk.Tk):
         self.images_df = pd.read_csv(os.path.join(self.data_dir, 'images.txt'), sep=' ', names=['image_id', 'file_path'])
         self.labels_df = pd.read_csv(os.path.join(self.data_dir, 'image_class_labels.txt'), sep=' ', names=['image_id', 'class_id'])
         self.classes_df = pd.read_csv(os.path.join(self.data_dir, 'classes.txt'), sep=' ', names=['class_id', 'class_name'])
-        self.clip_embeds_imgs = np.load(os.path.join(self.data_dir, 'clip_embeds_imgs.npy'))
-        self.clip_embeds_text = np.load(os.path.join(self.data_dir, 'clip_embeds_text.npy'))
-        self.clip_embeds = np.load(os.path.join(self.data_dir, 'clip_embeds.npy'))
-        self.clf = joblib.load(os.path.join(self.data_dir, 'classifier.pkl'))
-        self.clf_img = joblib.load(os.path.join(self.data_dir, 'classifier_img.pkl'))
-        self.clf_text = joblib.load(os.path.join(self.data_dir, 'classifier_text.pkl'))
+        self.clip_embeds_imgs = np.load(os.path.join(self.embeds_dir, 'clip_embeds_imgs.npy'))
+        self.clip_embeds_text = np.load(os.path.join(self.embeds_dir, 'clip_embeds_text.npy'))
+        self.clip_embeds = np.load(os.path.join(self.embeds_dir, 'clip_embeds.npy'))
+        self.clf = joblib.load(os.path.join(self.embeds_dir, 'classifier.pkl'))
+        self.clf_img = joblib.load(os.path.join(self.embeds_dir, 'classifier_img.pkl'))
+        self.clf_text = joblib.load(os.path.join(self.embeds_dir, 'classifier_text.pkl'))
     
     def load_clip(self):
         self.clip_model, self.clip_preprocess = clip.load("ViT-B/32", device=self.device)
@@ -59,15 +60,15 @@ class WelcomePage(tk.Frame):
         super().__init__(parent)
         self.controller = controller
         
-        image_paths = ['data/images/001.Black_footed_Albatross/Black_Footed_Albatross_0001_796111.jpg',
-                   'data/images/091.Mockingbird/Mockingbird_0003_80833.jpg',
-                   'data/images/076.Dark_eyed_Junco/Dark_Eyed_Junco_0012_66932.jpg',
-                   'data/images/174.Palm_Warbler/Palm_Warbler_0005_169918.jpg',
-                   'data/images/143.Caspian_Tern/Caspian_Tern_0006_145594.jpg',
-                   'data/images/106.Horned_Puffin/Horned_Puffin_0004_100733.jpg',
-                   'data/images/105.Whip_poor_Will/Whip_Poor_Will_0005_796425.jpg',
-                   'data/images/002.Laysan_Albatross/Laysan_Albatross_0033_658.jpg',
-                   'data/images/021.Eastern_Towhee/Eastern_Towhee_0001_22314.jpg',]
+        image_paths = [os.path.join(self.controller.img_dir, '001.Black_footed_Albatross/Black_Footed_Albatross_0001_796111.jpg'),
+                   os.path.join(self.controller.img_dir, '091.Mockingbird/Mockingbird_0003_80833.jpg'),
+                   os.path.join(self.controller.img_dir, '076.Dark_eyed_Junco/Dark_Eyed_Junco_0012_66932.jpg'),
+                   os.path.join(self.controller.img_dir, '174.Palm_Warbler/Palm_Warbler_0005_169918.jpg'),
+                   os.path.join(self.controller.img_dir, '143.Caspian_Tern/Caspian_Tern_0006_145594.jpg'),
+                   os.path.join(self.controller.img_dir, '106.Horned_Puffin/Horned_Puffin_0004_100733.jpg'),
+                   os.path.join(self.controller.img_dir, '105.Whip_poor_Will/Whip_Poor_Will_0005_796425.jpg'),
+                   os.path.join(self.controller.img_dir, '002.Laysan_Albatross/Laysan_Albatross_0033_658.jpg'),
+                   os.path.join(self.controller.img_dir, '021.Eastern_Towhee/Eastern_Towhee_0001_22314.jpg'),]
 
         # Add a label at the top
         label = tk.Label(self, text="Bird Species Exploration and Retrieval", font=("Helvetica", 16))
@@ -490,6 +491,7 @@ class ImageTextPage(tk.Frame):
         # self.img_label.grid(row=3, column=1, pady=20)  # Place image again after hiding it
 
 if __name__ == "__main__":
-    data_dir = './data'
-    app = App(data_dir)
+    data_dir = './data/CUB_200_2011'
+    embeds_dir = './data/'
+    app = App(data_dir, embeds_dir)
     app.mainloop()
