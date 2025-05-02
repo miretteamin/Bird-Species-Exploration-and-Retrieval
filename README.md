@@ -4,6 +4,11 @@ This project explores the use of **Foundation Models** for **bird species recogn
 
 ## ![alt text](assets/image.png)
 
+## 🎥 Demo Video
+
+🎬 [Watch our demo video!](assets/demo.mp4)
+
+
 ## 🚀 Project Tasks
 
 ### **Task 1: Bird Species Recognition with CLIP**
