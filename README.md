@@ -2,12 +2,12 @@
 
 This project explores the use of **Foundation Models** for **bird species recognition, textual description generation, and image retrieval**. It employs **CLIP, BLIP-2, and Llava** to classify bird species, generate detailed descriptions, and retrieve relevant images from textual inputs. The **CUB-200-2011 dataset** is used as the primary dataset for training and evaluation.
 
-![alt text](pics/image.png)
----
+## ![alt text](assets/image.png)
 
 ## 🚀 Project Tasks
 
 ### **Task 1: Bird Species Recognition with CLIP**
+
 📌 **Objective:** Employ CLIP for image classification to identify bird species within the **CUB-200-2011 dataset**.
 
 🔹 Introduce CLIP and its dual capability for understanding both images and text.
@@ -16,6 +16,7 @@ This project explores the use of **Foundation Models** for **bird species recogn
 ---
 
 ### **Task 2: Textual Description Enhancement with an Image Captioner**
+
 📌 **Objective:** Use **BLIP-2** or **Llava** to generate detailed and nuanced textual descriptions of the bird images.
 
 🔹 Explain the model’s capabilities in generating rich textual content from images.
@@ -24,6 +25,7 @@ This project explores the use of **Foundation Models** for **bird species recogn
 ---
 
 ### **Task 3: Image and Cross-Modal Retrieval with CLIP**
+
 📌 **Objective:** Develop an image and **cross-modal retrieval system** using CLIP to find dataset images based on textual descriptions or visual similarity.
 
 🔹 Introduce **image retrieval** and **cross-modal retrieval**, highlighting CLIP's effectiveness in these tasks.
@@ -33,6 +35,7 @@ This project explores the use of **Foundation Models** for **bird species recogn
 ---
 
 ## 📂 Dataset
+
 - **CUB-200-2011** ([Perona Lab - CUB-200-2011](https://www.vision.caltech.edu/datasets/cub_200_2011/))
 - Contains **200 bird species** with **11,788 images**.
 - Includes **detailed annotations** for each bird (species, attributes, bounding boxes, etc.).
@@ -43,6 +46,7 @@ This project explores the use of **Foundation Models** for **bird species recogn
 ## 🔧 Installation & Setup
 
 ### **1️⃣ Clone the Repository**
+
 ```bash
  git clone https://github.com/miretteamin/Bird-Species-Exploration-and-Retrieval.git
  cd Bird-Species-Exploration-and-Retrieval
@@ -54,6 +58,7 @@ This project explores the use of **Foundation Models** for **bird species recogn
 ``` -->
 
 ### **3️⃣ Download Dataset**
+
 ```bash
  wget http://www.vision.caltech.edu/visipedia-data/CUB-200-2011/CUB_200_2011.tgz
  tar -xvzf CUB_200_2011.tgz
@@ -68,7 +73,8 @@ This project explores the use of **Foundation Models** for **bird species recogn
 - **Hugging Face Transformers & Diffusers** (for model implementation)
 
 ---
-<!-- 
+
+<!--
 ## 📚 Tutorials & Resources
 
 🔹 Running **BLIP-2** on Colab → [Chat with BLIP-2](https://huggingface.co/spaces/Salesforce/BLIP-2)
